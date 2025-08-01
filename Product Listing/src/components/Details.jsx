@@ -54,7 +54,7 @@ const Details = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               {product.title}
             </h2>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 text-red-300">
+            <h3 className="text-2xl font-bold mb-4 text-red-300">
               {product.category}
             </h3>
             <p className="text-xl text-green-600 font-semibold mb-4">₹{product.price}</p>
