@@ -40,11 +40,12 @@ const Home = () => {
     }
   }, [category, Products]);
 
-  return (
-    <div className="flex w-full h-screen">
-      <Nav />
-      <div className="flex-1 overflow-y-auto p-6 bg-gray-100">
-        {Products ? (
+return (
+  <>
+    {Products ? (
+      <div className="flex w-full h-screen">
+        <Nav />
+        <div className="flex-1 overflow-y-auto p-6 bg-gray-100">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {Array.isArray(filterProducts) &&
               filterProducts.map((product) => (
@@ -52,8 +53,6 @@ const Home = () => {
                   className="bg-white rounded-lg shadow hover:shadow-lg transition"
                   key={product.id}
                 >
-                  {" "}
-                  {console.log("product is ", product)}
                   <Link to={`/details/${product.id}`} className="block">
                     <div
                       className="h-40 bg-contain bg-no-repeat bg-center lg:h-32"
@@ -69,12 +68,14 @@ const Home = () => {
                 </div>
               ))}
           </div>
-        ) : (
-          <Loading />
-        )}
+        </div>
       </div>
-    </div>
-  );
+    ) : (
+      <Loading />
+    )}
+  </>
+);
+
 };
 
 export default Home;

@@ -5,7 +5,7 @@ import { Appcontext } from "./Maincontext";
 
 
 const AppcontextProvider = ({ children }) => {
-  const [Products, setProducts] = useState([]);
+  const [Products, setProducts] = useState(null);
 
   async function getproduct() {
     try {
