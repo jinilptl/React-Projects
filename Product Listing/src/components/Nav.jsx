@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Appcontext } from '../utils/Maincontext';
 
 const Nav = () => {
+
+    let {Products}=useContext(Appcontext);
+
+
+    
+    // console.log("product is ",Products);
+
+    //first way
+
+    // let categoryArr=Products.map((product,index)=>(
+    //   product.category
+    // ))
+
+    //second way
+    let categoryArr=Products.reduce((acc,cv)=>(
+      [...acc,cv.category]
+    ),[])
+    
+  
+
+    let uniqCategory=[...new Set(categoryArr)]
+
+
+    
+    
+
+
   return (
     <div className="w-64 bg-gray-800 text-white p-6 flex-shrink-0 h-full">
       <div className="flex flex-col gap-6 h-full">
@@ -17,9 +45,12 @@ const Nav = () => {
             Category Filter
           </h2>
           <ul className="space-y-2">
-            <li className="hover:text-blue-400 cursor-pointer">📦 Category 1</li>
-            <li className="hover:text-blue-400 cursor-pointer">🛒 Category 2</li>
-            <li className="hover:text-blue-400 cursor-pointer">🎁 Category 3</li>
+            
+           {uniqCategory.map((category,index)=>(
+            <li key={index} className="hover:text-blue-400 cursor-pointer capitalize">
+              <Link to={`/category?type=${category}`} >{category}</Link>
+            </li>
+           ))}
           </ul>
         </div>
       </div>

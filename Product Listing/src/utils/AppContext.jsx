@@ -1,10 +1,11 @@
 import axios from "./axios";
-import { createContext, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
+import { Appcontext } from "./Maincontext";
 
-export const Appcontext = createContext();
+
 
 const AppcontextProvider = ({ children }) => {
-  const [Products, setProducts] = useState(null);
+  const [Products, setProducts] = useState([]);
 
   async function getproduct() {
     try {

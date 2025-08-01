@@ -54,6 +54,9 @@ const Details = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               {product.title}
             </h2>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4 text-red-300">
+              {product.category}
+            </h3>
             <p className="text-xl text-green-600 font-semibold mb-4">₹{product.price}</p>
             <p className="text-gray-600 text-sm leading-relaxed">
               {showMore?(product.description):`${product.description.slice(0,max_textLength)} ...`}
