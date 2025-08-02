@@ -21,7 +21,7 @@ const Details = () => {
       let {data} = await axios.get(
         `https://fakestoreapi.in/api/products/${id}`
       );
-      console.log("response inside details is ",data.product);
+     
       setProduct(data.product)
     //   console.log(data.product.description.slice(0,10));
       

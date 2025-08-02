@@ -15,7 +15,7 @@ const Home = () => {
   //   console.log('url is ',search);
   let category = search.split("=")[1];
 
-  console.log("category is ", category);
+ 
 
   let getFilterproduct = async () => {
     try {
@@ -23,7 +23,7 @@ const Home = () => {
         `https://fakestoreapi.in/api/products/category?type=${category}`
       );
 
-      console.log("category response is ", data.products);
+      
       setFilterProducts(data.products);
     } catch (error) {
       console.log("error is ", error);
